@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+    <title>Quản lý chức vụ</title>
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Quản lý chức vụ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item active">
+                                Thêm mới/Chỉnh sửa chức vụ
+                            </li>
+                            <li class="list-group-item">
+                                <p>
+                                    Mã chức vụ <br>
+                                    <input id="idMaChucVu" type="text" disabled class="sw">
+                                </p>
+
+                                <p>
+                                    Tên Chức vụ (*) <br>
+                                    <input id="idTenChucVu" type="text" class="sw">
+                                </p>
+
+                                <p>
+                                    Thuộc Công ty (*) <br>
+                                    <select id="select" width="50px" class="sw">
+                                        <option value="Công ty 1">Công ty 1</option>
+                                        <option value="Công ty 2">Công ty 2</option>
+                                    </select>
+                                </p>
+
+                                <p>
+                                    Mô tả <br>
+                                    <textarea id="idMoTa" class="sw"></textarea>
+                                </p>
+
+                                <p>
+                                    <input type="checkbox" checked> Hệ thống
+                                    <input id="idKichHoat" type="checkbox" style="margin-left: 15%;"> Kích hoạt
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="btnSave()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h4>Quản lý Chức vụ</h4>
+        <hr class="style1">
+        <div>
+
+            <p>
+                Từ khóa:
+                <input type="text" placeholder="Tìm kiếm">
+                <input type="checkbox" checked>
+                Đã xóa
+                <button type="button" class="btn btn-info">Tìm kiếm</button>
+                <button type="button" class="btn btn-info">Xuất Excel</button>
+            </p>
+
+        </div>
+        <table class="table table-bordered table-striped" id="table">
+            <thead>
+                <tr class="center">
+                    <th>STT</th>
+                    <th>Mã chức vụ</th>
+                    <th>Tên Chức vụ</th>
+                    <th>Công ty</th>
+                    <th>Kích hoạt</th>
+                    <th>Mô tả</th>
+                    <th>Ghi chú</th>
+                </tr>
+            </thead>
+            <tbody id="dataList">
+                <tr>
+                    <td class="center">1</td>
+                    <td>CV1</td>
+                    <td>Chức vụ 1</td>
+                    <td>Công ty 1</td>
+                    <td class="center"><input type="checkbox" name="namekichhoat"> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="right">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Modal">Thêm</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#Modal"
+                onclick="btnSua()">Sửa</button>
+            <button type="button" class="btn btn-info" onclick="btnXoa()">Xóa</button>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/js.js"></script>
+
+</body>
+
+</html>
